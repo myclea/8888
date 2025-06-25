@@ -1,0 +1,26 @@
+<view class="splash-container">
+  <!-- 主要内容区域 -->
+  <view class="content-section">
+    <!-- 标题区域 -->
+    <view class="title-section">
+      <view class="main-title">面包脑袋</view>
+      <view class="english-title">Bread Head</view>
+      <view class="slogan">面包脑袋上线，选、学、吃全搞定！</view>
+      <view class="english-slogan">Bread lover alert! Choose, learn, and savor with ease!</view>
+    </view>
+    
+    <!-- 图像区域 -->
+    <view class="image-section">
+      <image class="bread-people" src="/images/yuan.jpg" mode="aspectFit"></image>
+    </view>
+    
+    <!-- 底部标语 -->
+    <view class="footer-slogan">
+      <view class="cn-slogan">你的面包小助手，有趣又有料</view>
+      <view class="en-slogan">Your bread buddy: fun and flavorful!</view>
+    </view>
+  </view>
+  
+  <!-- 跳过按钮 -->
+  <view class="skip-button" bindtap="skipSplash">跳过</view>
+</view> 

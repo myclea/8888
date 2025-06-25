@@ -1,0 +1,66 @@
+<view class="container">
+  <!-- 背景装饰 -->
+  <view class="bg-decoration">
+    <view class="circle circle-1"></view>
+    <view class="circle circle-2"></view>
+    <view class="circle circle-3"></view>
+  </view>
+
+  <!-- 主要内容 -->
+  <view class="content">
+    <!-- Logo区域 -->
+    <view class="logo-section">
+      <view class="logo-container">
+        <image src="/images/bread-character.png" class="logo-image" mode="aspectFit"></image>
+      </view>
+      <text class="app-name">面包脑袋</text>
+      <text class="app-subtitle">Bread Head</text>
+    </view>
+
+    <!-- 描述文字 -->
+    <view class="description-section">
+      <text class="main-desc">面包脑袋上线，选、学、吃全搞定！</text>
+      <text class="sub-desc">Bread lover alert! Choose, learn, and savor with ease!</text>
+    </view>
+
+    <!-- 特色功能展示 -->
+    <view class="features-section">
+      <view class="feature-item">
+        <text class="feature-icon">🎲</text>
+        <text class="feature-text">随机抽签</text>
+      </view>
+      <view class="feature-item">
+        <text class="feature-icon">📚</text>
+        <text class="feature-text">制作教程</text>
+      </view>
+      <view class="feature-item">
+        <text class="feature-icon">🍞</text>
+        <text class="feature-text">面包合集</text>
+      </view>
+      <view class="feature-item">
+        <text class="feature-icon">❤️</text>
+        <text class="feature-text">收藏管理</text>
+      </view>
+    </view>
+
+    <!-- 开始按钮 -->
+    <view class="action-section">
+      <button class="start-btn" bindtap="startApp">
+        <text class="btn-text">开始探索</text>
+        <text class="btn-arrow">→</text>
+      </button>
+      
+      <view class="tips">
+        <text class="tips-text">你的面包小助手，有趣又有料</text>
+        <text class="tips-subtitle">Your bread buddy: fun and flavorful!</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 底部装饰 -->
+  <view class="bottom-decoration">
+    <view class="wave wave-1"></view>
+    <view class="wave wave-2"></view>
+    <view class="wave wave-3"></view>
+  </view>
+</view>

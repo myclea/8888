@@ -1,0 +1,436 @@
+/* 面包主题色彩 - 更新为与截图匹配的暖色调 */
+:root {
+  --bread-primary: #E8AA42; /* 面包金黄色 */
+  --bread-secondary: #7D5A50; /* 面包棕色 */
+  --bread-accent: #F8C78E; /* 浅面包色 */
+  --bread-light: #FFF8D6; /* 暖黄奶油色 - 更贴近截图 */
+  --bread-bg: #FFF8D6; /* 背景色与奶油色统一 */
+  --bread-text: #513B2F; /* 深棕文字色 */
+  --moonshot-blue: #4169E1; /* 蓝色 */
+  --moonshot-light-blue: #E8F0FE; /* 浅蓝色 */
+  --favorite-red: #FF6B6B; /* 收藏红色 */
+}
+
+/* 教程页整体布局 */
+.tutorial-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: var(--bread-bg);
+  overflow: hidden;
+  color: var(--bread-text);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* 顶部固定：助手信息 - 更新为更贴近截图的样式 */
+.assistant-header {
+  display: flex;
+  align-items: center;
+  padding: 32rpx 36rpx;
+  background-color: var(--bread-bg); /* 与整体背景统一 */
+  border-bottom: none;
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.assistant-header::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 5%;
+  right: 5%;
+  height: 1rpx;
+  background: linear-gradient(90deg, transparent, rgba(125, 90, 80, 0.1), transparent);
+  opacity: 0.5;
+}
+
+/* 面包图标包装器 */
+.bread-icon-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 24rpx;
+}
+
+.bread-icon-wrapper::before {
+  content: "";
+  position: absolute;
+  width: 110rpx;
+  height: 110rpx;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(232, 170, 66, 0.15) 0%, rgba(255, 255, 255, 0) 70%);
+  z-index: 0;
+}
+
+.assistant-avatar {
+  width: 88rpx;
+  height: 88rpx;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.assistant-info {
+  flex: 1;
+}
+
+/* 助手标题 - 垂直文本排列 */
+.assistant-title {
+  font-size: 40rpx;
+  font-weight: bold;
+  color: var(--bread-secondary);
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  letter-spacing: 4rpx;
+  margin-right: 4rpx;
+  line-height: 1.2;
+  display: inline-block;
+  text-align: center;
+  height: 180rpx;
+}
+
+.assistant-desc {
+  font-size: 24rpx;
+  color: #8D7B6F;
+  background-color: rgba(232, 170, 66, 0.08);
+  padding: 6rpx 16rpx;
+  border-radius: 16rpx;
+  display: inline-block;
+  border: 1rpx solid rgba(232, 170, 66, 0.1);
+  margin-top: 8rpx;
+}
+
+/* 模型状态指示器 */
+.model-status {
+  display: flex;
+  align-items: center;
+  margin-right: 10rpx;
+  font-size: 22rpx;
+  color: #8D7B6F;
+  background-color: rgba(248, 199, 142, 0.15);
+  border-radius: 24rpx;
+  padding: 8rpx 16rpx;
+  border: 1rpx solid rgba(248, 199, 142, 0.2);
+}
+
+/* 中间滚动：聊天记录 - 纯色背景匹配截图 */
+.chat-scroll-container {
+  flex: 1;
+  overflow-y: auto;
+  padding: 30rpx 36rpx;
+  -webkit-overflow-scrolling: touch;
+  background-color: var(--bread-bg);
+  position: relative;
+}
+
+/* 装饰元素 - 减弱装饰，不分散注意力 */
+.decoration-elements {
+  display: none; /* 隐藏装饰元素以匹配截图 */
+}
+
+/* 聊天消息 */
+.msg {
+  display: flex;
+  margin-bottom: 36rpx;
+  align-items: flex-start;
+  position: relative;
+  z-index: 1;
+}
+.msg.bot { justify-content: flex-start; }
+.msg.user { 
+  justify-content: flex-end; 
+  margin-bottom: 8rpx;
+}
+
+/* 消息头像包装器 */
+.msg-avatar-wrapper {
+  position: relative;
+  margin-right: 15rpx;
+}
+
+.msg-avatar {
+  width: 76rpx;
+  height: 76rpx;
+  border-radius: 50%;
+  flex-shrink: 0;
+  background-color: transparent;
+}
+
+.msg-avatar-wrapper::after {
+  display: none; /* 移除三角形以匹配截图 */
+}
+
+.msg-content-wrapper {
+  max-width: 75%;
+  position: relative;
+  margin-right: 90rpx;
+}
+
+.msg-content {
+  border-radius: 16rpx;
+  padding: 20rpx 24rpx;
+  font-size: 28rpx;
+  line-height: 1.7;
+  letter-spacing: 0.5rpx;
+}
+
+/* 消息类型特定样式 */
+.bot-msg-content {
+  position: relative;
+  background-color: #fff;
+  color: var(--bread-text);
+  border-radius: 16rpx;
+  box-shadow: 0 2rpx 10rpx rgba(125, 90, 80, 0.05);
+  max-width: 85%;
+}
+
+.bot-msg-content::before {
+  display: none; /* 移除渐变以匹配截图 */
+}
+
+.user-msg-content {
+  position: relative;
+  background-color: #fff;
+  color: var(--bread-text);
+  border-radius: 16rpx;
+  box-shadow: 0 2rpx 10rpx rgba(125, 90, 80, 0.05);
+  text-shadow: none;
+  max-width: 100%;
+}
+
+.msg-time {
+  font-size: 24rpx;
+  color: #999;
+  margin-top: 4rpx;
+  margin-right: 8rpx;
+  display: block;
+  text-align: right;
+}
+
+.user-time {
+  font-size: 24rpx;
+  color: #999;
+  text-align: right;
+  padding-right: 20rpx;
+  margin-right: 90rpx;
+  margin-bottom: 16rpx;
+}
+
+.bot .msg-time {
+  text-align: left;
+  margin-left: 8rpx;
+}
+
+/* 底部固定：输入区域 */
+.input-area {
+  padding: 20rpx 36rpx 30rpx;
+  background-color: var(--bread-bg); /* 与整体背景统一 */
+  border-top: 1rpx solid rgba(125, 90, 80, 0.05);
+  flex-shrink: 0;
+  position: relative;
+  z-index: 10;
+}
+
+.input-area-handle {
+  display: none; /* 移除手柄以匹配截图 */
+}
+
+.input-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 20rpx;
+}
+
+.msg-input {
+  flex: 1;
+  background-color: #fff;
+  border-radius: 40rpx;
+  padding: 22rpx 36rpx;
+  font-size: 28rpx;
+  border: 1rpx solid rgba(232, 170, 66, 0.1);
+  color: var(--bread-text);
+  box-shadow: 0 2rpx 6rpx rgba(125, 90, 80, 0.02);
+}
+
+.send-btn {
+  background-color: var(--bread-accent);
+  color: var(--bread-text);
+  border-radius: 40rpx;
+  padding: 20rpx 44rpx;
+  font-size: 28rpx;
+  font-weight: 500;
+  transition: all 0.3s;
+  box-shadow: 0 2rpx 10rpx rgba(232, 170, 66, 0.1);
+  border: 1rpx solid rgba(232, 170, 66, 0.1);
+  position: relative;
+  overflow: hidden;
+  letter-spacing: 1rpx;
+}
+
+.send-btn[disabled] {
+  background-color: #F8D8B3;
+  color: rgba(125, 90, 80, 0.5);
+  opacity: 0.7;
+  box-shadow: none;
+}
+
+/* 快捷问题 */
+.quick-questions {
+  margin-top: 24rpx;
+}
+
+.quick-scroll {
+  white-space: nowrap;
+  padding: 8rpx 0;
+}
+
+.quick-btn {
+  display: inline-block;
+  background-color: rgba(232, 170, 66, 0.1);
+  border: 1rpx solid rgba(232, 170, 66, 0.1);
+  border-radius: 30rpx;
+  padding: 14rpx 26rpx;
+  font-size: 26rpx;
+  color: var(--bread-secondary);
+  margin-right: 16rpx;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s;
+}
+
+/* 面包形状加载动画 */
+.bread-loading {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 8rpx;
+}
+
+.bread-loading-icon {
+  width: 28rpx;
+  height: 28rpx;
+  background-color: var(--bread-primary);
+  border-radius: 50%;
+  margin-right: 12rpx;
+  opacity: 0.8;
+}
+
+.bread-loading-text {
+  font-size: 26rpx;
+  color: var(--bread-secondary);
+}
+
+/* 加载状态消息内容区域 */
+.loading {
+  padding: 16rpx 24rpx !important;
+  min-height: auto !important;
+}
+
+/* 按钮悬停效果 */
+.hot-btn-hover {
+  transform: translateY(-2rpx);
+  box-shadow: 0 4rpx 10rpx rgba(125, 90, 80, 0.08);
+  background-color: rgba(232, 170, 66, 0.15);
+}
+
+.quick-btn-hover {
+  background-color: rgba(232, 170, 66, 0.15);
+  transform: translateY(-1rpx);
+}
+
+.send-btn-hover {
+  background-color: #F0BE7D;
+  transform: translateY(-1rpx);
+}
+
+/* 消息内容的排版 */
+.bot-msg-content, .user-msg-content {
+  word-break: break-word;
+  white-space: pre-wrap;
+}
+
+/* 刷新按钮 */
+.refresh-btn {
+  width: 40rpx;
+  height: 40rpx;
+  margin-left: 10rpx;
+  cursor: pointer;
+}
+
+.refresh-icon {
+  width: 40rpx;
+  height: 40rpx;
+  transition: transform 0.3s;
+}
+
+.refresh-btn:active .refresh-icon {
+  transform: rotate(180deg);
+}
+
+/* 收藏按钮 */
+.favorite-btn {
+  width: 40rpx;
+  height: 40rpx;
+  margin: 0 12rpx;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.favorite-icon {
+  font-size: 38rpx;
+  color: #999;
+  transition: all 0.3s;
+}
+
+.favorite-btn.active .favorite-icon {
+  color: #FF6B6B;
+  transform: scale(1.1);
+}
+
+/* 当前面包提示 */
+.current-bread-container {
+  padding: 10rpx 36rpx;
+  background-color: rgba(232, 170, 66, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1rpx solid rgba(232, 170, 66, 0.1);
+}
+
+.current-bread-label {
+  font-size: 24rpx;
+  color: var(--bread-secondary);
+  font-weight: 500;
+  padding: 6rpx 20rpx;
+  border-radius: 20rpx;
+  background-color: rgba(232, 170, 66, 0.08);
+  display: inline-block;
+}
+
+.favorite-status {
+  display: flex;
+  align-items: center;
+  padding: 6rpx 16rpx;
+  border-radius: 20rpx;
+  font-size: 24rpx;
+  background-color: rgba(232, 170, 66, 0.08);
+  color: var(--bread-secondary);
+  cursor: pointer;
+}
+
+.favorite-text {
+  margin-right: 6rpx;
+}
+
+.favorite-heart {
+  color: #FF6B6B;
+  font-size: 26rpx;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+} 

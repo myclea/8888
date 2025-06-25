@@ -1,0 +1,11 @@
+{
+  "navigationBarTitleText": "面包脑袋",
+  "navigationBarBackgroundColor": "#fdc03c",
+  "navigationBarTextStyle": "white",
+  "backgroundColor": "#f5edc4",
+  "backgroundTextStyle": "light",
+  "enablePullDownRefresh": true,
+  "onReachBottomDistance": 50,
+  "usingComponents": {},
+  "style": "v2"
+}

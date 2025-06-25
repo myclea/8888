@@ -1,0 +1,52 @@
+{
+  "pages": [
+    "pages/splash/splash",
+    "pages/lottery/lottery",
+    "pages/result/result",
+    "pages/collection/collection",
+    "pages/tutorial/tutorial",
+    "pages/profile/profile"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "面包脑袋",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#f5edc4"
+  },
+  "tabBar": {
+    "color": "#999999",
+    "selectedColor": "#007aff",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/lottery/lottery",
+        "text": "抽签",
+        "iconPath": "images/tab-lottery.png",
+        "selectedIconPath": "images/tab-lottery-active.png"
+      },
+      {
+        "pagePath": "pages/tutorial/tutorial",
+        "text": "教程",
+        "iconPath": "images/tab-tutorial.png",
+        "selectedIconPath": "images/tab-tutorial-active.png"
+      },
+      {
+        "pagePath": "pages/collection/collection",
+        "text": "合集",
+        "iconPath": "images/tab-collection.png",
+        "selectedIconPath": "images/tab-collection-active.png"
+      },
+      {
+        "pagePath": "pages/profile/profile",
+        "text": "收藏",
+        "iconPath": "images/tab-profile.png",
+        "selectedIconPath": "images/tab-profile-active.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents"
+}

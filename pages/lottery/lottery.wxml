@@ -1,0 +1,44 @@
+<view class="lottery-bg">
+  <image class="bg-image" src="/images/lottery-background.png" mode="aspectFill"/>
+
+  <!-- 标题区域 - 放在卡片上方 -->
+  <view class="lottery-header">
+    <view class="main-title">幸运面包</view>
+    <view class="sub-title1">轻松一抽</view>
+    <view class="sub-title2">发现你的下一款心头好！</view>
+  </view>
+
+  <!-- 卡片扇形区域 -->
+  <view class="fan-container">
+    <view
+      wx:for="{{cards}}"
+      wx:key="index"
+      class="card {{flashingCards && flashingCards.includes(index) ? 'card-flash' : ''}} {{selectedCardIndex === index ? 'card-selected' : ''}}"
+      style="transform-origin:50% 100%;transform:translateX(-50%) rotate({{item.angle}}deg) translateY(-{{radius}}px) scale({{item.scale}});z-index:{{selectedCardIndex === index ? 999 : item.zIndex}};"
+      id="card-{{index}}"
+      animation="{{item.animation}}"
+    >
+      <image class="card-img" src="{{item.img}}" mode="aspectFit"/>
+      <!-- 教程按钮，仅在卡片翻转且选中时显示 -->
+      <button 
+        wx:if="{{selectedCardIndex === index && cards[index].img !== '/images/card-back.png' && showTutorialButton}}" 
+        class="tutorial-btn" 
+        catchtap="gotoTutorial">教程</button>
+    </view>
+  </view>
+
+  <view class="bubble" style="margin-top: 60rpx;">
+    <view class="bubble-content">
+      {{bubbleText}}
+      <view class="bubble-arrow"></view>
+    </view>
+  </view>
+
+  <view class="bread-character" style="margin-top: 40rpx;">
+    <image class="character-image" src="/images/bread-character.png" mode="aspectFit"/>
+  </view>
+
+  <view class="button-container" style="margin-top: 32rpx;">
+    <button class="draw-btn" bindtap="startDraw" disabled="{{isDrawing}}">{{isDrawing ? '抽取中...' : '开始抽卡'}}</button>
+  </view>
+</view> 

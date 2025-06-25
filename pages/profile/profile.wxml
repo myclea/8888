@@ -1,0 +1,54 @@
+<view class="profile-container">
+  <!-- 顶部固定区域 -->
+  <view class="profile-header">
+    <view class="profile-title">我的账户</view>
+    <image class="profile-avatar" src="{{userInfo.avatar}}" />
+    <view class="profile-name">{{userInfo.nickname}}</view>
+    <view class="stat-card">
+      <view class="stat-item" wx:for="{{stats}}" wx:key="label">
+        <view class="stat-num">{{item.value}}</view>
+        <view class="stat-label">{{item.label}}</view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 收藏列表标题 -->
+  <view class="section-title">我收藏的面包</view>
+  
+  <!-- 收藏列表：水平滚动 -->
+  <scroll-view class="bread-scroll" scroll-x="true" wx:if="{{favorites.length > 0}}">
+    <view class="bread-item" wx:for="{{favorites}}" wx:key="id">
+      <view class="bread-emoji">{{item.emoji}}</view>
+      <view class="bread-name">{{item.name}}</view>
+      <view class="bread-actions">
+        <view class="bread-action tutorial" bindtap="gotoTutorial" data-id="{{item.id}}">教程</view>
+        <view class="bread-action remove" bindtap="removeFavorite" data-id="{{item.id}}">移除</view>
+      </view>
+    </view>
+  </scroll-view>
+  
+  <!-- 空状态 -->
+  <view class="empty-state" wx:if="{{favorites.length === 0}}">
+    <image class="empty-img" src="/images/bread-character.png" />
+    <view class="empty-text">还没有收藏任何面包哦</view>
+    <navigator class="empty-btn" url="/pages/collection/collection" open-type="switchTab">去合集看看</navigator>
+  </view>
+  
+  <!-- 最近浏览 -->
+  <view class="section-title">最近浏览</view>
+  <scroll-view class="bread-scroll" scroll-x="true">
+    <view class="bread-item" wx:for="{{recent}}" wx:key="id">
+      <view class="bread-emoji">{{item.emoji}}</view>
+      <view class="bread-name">{{item.name}}</view>
+      <view class="bread-actions">
+        <view class="bread-action tutorial" bindtap="gotoTutorial" data-id="{{item.id}}">教程</view>
+      </view>
+    </view>
+  </scroll-view>
+  
+  <!-- 开发者信息 -->
+  <view class="developer-info">
+    <view class="developer-title">🍞 面包脑袋 v1.0</view>
+    <view class="developer-text">由面包爱好者倾心打造</view>
+  </view>
+</view> 

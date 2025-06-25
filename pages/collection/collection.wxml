@@ -1,0 +1,46 @@
+<view class="collection-container">
+  <!-- 顶部固定区域 -->
+  <view class="fixed-header">
+    <view class="collection-title">面包合集</view>
+    <view class="search-bar">
+      <input class="search-input" placeholder="搜索你喜欢的面包..." bindinput="onSearch"/>
+      <button style="width: 80px;" class="search-btn">🔍</button>
+    </view>
+  </view>
+
+  <!-- 分类导航：水平滚动 -->
+  <scroll-view class="category-scroll" scroll-x="true" show-scrollbar="{{false}}">
+    <view 
+      wx:for="{{categories}}" 
+      wx:key="item" 
+      class="category-btn {{selectedCategory === item ? 'active' : ''}}" 
+      bindtap="selectCategory" 
+      data-category="{{item}}">
+      {{item}}
+    </view>
+  </scroll-view>
+
+  <!-- 面包卡片列表：垂直滚动 -->
+  <scroll-view class="bread-list-container" scroll-y="true">
+    <block wx:for="{{filteredBreads}}" wx:key="id">
+      <view class="bread-card">
+        <image class="bread-img" src="{{item.img}}" mode="aspectFill"/>
+        <view class="bread-info">
+          <view class="bread-name">{{item.name}}</view>
+          <view class="bread-desc">{{item.desc}}</view>
+        </view>
+        <view class="btn-container">
+          <button style="width: 80px;" class="tutorial-btn" bindtap="gotoTutorial" data-id="{{item.id}}">
+            教程<text class="heart-icon">♡</text>
+          </button>
+        </view>
+        <!-- 收藏按钮 -->
+        <view class="fav-btn {{favs.includes(item.id) ? 'active' : ''}}" bindtap="toggleFav" data-id="{{item.id}}">
+          <text class="heart-icon">{{favs.includes(item.id) ? '❤' : '♡'}}</text>
+        </view>
+      </view>
+    </block>
+    <!-- 增加一个底部垫片，防止最后一条被遮挡 -->
+    <view class="list-bottom-padding"></view>
+  </scroll-view>
+</view> 

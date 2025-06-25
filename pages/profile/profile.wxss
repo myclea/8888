@@ -1,0 +1,178 @@
+/* 收藏页整体布局 */
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: #fdfaf0;
+  overflow-y: auto;
+  padding-bottom: 40rpx;
+}
+
+/* 顶部固定区域 */
+.profile-header {
+  padding: 30rpx 30rpx 20rpx;
+  background-color: #fff;
+  border-bottom: 1rpx solid #f0f0f0;
+  text-align: center;
+  margin-bottom: 20rpx;
+}
+
+.profile-title {
+  font-size: 36rpx;
+  font-weight: bold;
+  margin-bottom: 15rpx;
+}
+
+.profile-avatar {
+  width: 130rpx;
+  height: 130rpx;
+  border-radius: 50%;
+  border: 4rpx solid #fdc03c;
+  margin-bottom: 10rpx;
+}
+
+.profile-name {
+  font-size: 32rpx;
+  font-weight: bold;
+  margin-bottom: 20rpx;
+}
+
+.stat-card {
+  display: flex;
+  justify-content: space-around;
+  background-color: #f7f7f7;
+  border-radius: 20rpx;
+  margin-bottom: 20rpx;
+  padding: 20rpx 0;
+}
+
+.stat-item { text-align: center; }
+
+.stat-num {
+  font-size: 34rpx;
+  font-weight: bold;
+  color: #fdc03c;
+}
+
+.stat-label {
+  font-size: 24rpx;
+  color: #888;
+}
+
+/* 区块标题 */
+.section-title {
+  padding: 20rpx 30rpx 10rpx;
+  font-size: 28rpx;
+  font-weight: bold;
+  color: #333;
+  background-color: #fdfaf0;
+}
+
+/* 面包滚动容器 */
+.bread-scroll {
+  white-space: nowrap;
+  padding: 20rpx 20rpx 30rpx;
+}
+
+/* 面包项目 */
+.bread-item {
+  display: inline-block;
+  background-color: #fff;
+  border-radius: 16rpx;
+  padding: 20rpx;
+  margin-right: 20rpx;
+  box-shadow: 0 4rpx 15rpx rgba(0,0,0,0.05);
+  width: 160rpx;
+  height: 200rpx;
+  text-align: center;
+  position: relative;
+  vertical-align: top;
+}
+
+.bread-emoji {
+  font-size: 50rpx;
+  margin-bottom: 15rpx;
+}
+
+.bread-name {
+  font-size: 24rpx;
+  font-weight: bold;
+  white-space: normal;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 15rpx;
+  height: 70rpx;
+}
+
+.bread-actions {
+  display: flex;
+  justify-content: space-between;
+}
+
+.bread-action {
+  font-size: 22rpx;
+  padding: 4rpx 12rpx;
+  border-radius: 12rpx;
+  width: auto;
+}
+
+.bread-action.tutorial {
+  background-color: #fdc03c;
+  color: #fff;
+}
+
+.bread-action.remove {
+  background-color: #f5f5f5;
+  color: #999;
+}
+
+/* 列表为空时的状态 */
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60rpx 0;
+  text-align: center;
+}
+
+.empty-img {
+  width: 150rpx;
+  height: 150rpx;
+  margin-bottom: 20rpx;
+  opacity: 0.6;
+}
+
+.empty-text {
+  font-size: 28rpx;
+  color: #aaa;
+  margin-bottom: 30rpx;
+}
+
+.empty-btn {
+  background: #fdc03c;
+  color: #fff;
+  border-radius: 30rpx;
+  padding: 15rpx 40rpx;
+  font-size: 28rpx;
+  display: inline-block;
+}
+
+/* 开发者信息 */
+.developer-info {
+  text-align: center;
+  padding: 40rpx 0 20rpx;
+  color: #aaa;
+}
+
+.developer-title {
+  font-size: 26rpx;
+  margin-bottom: 10rpx;
+}
+
+.developer-text {
+  font-size: 24rpx;
+}

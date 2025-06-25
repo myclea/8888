@@ -1,0 +1,40 @@
+<view class="result-bg">
+  <!-- 头部区域 -->
+  <view class="header-section">
+    <view class="result-title">幸运面包</view>
+    <view class="result-subtitle">
+      <text class="result-desc">轻松一抽</text>
+      <text class="result-divider">·</text>
+      <text class="result-desc-en">发现你的下一款心头好！</text>
+    </view>
+  </view>
+
+  <!-- 面包卡片区域 -->
+  <view class="bread-card-container">
+    <block wx:for="{{selectedBreads}}" wx:key="id">
+      <view class="bread-card {{item.bgClass}} fade-in">
+        <image class="bread-img" src="{{item.img}}" mode="aspectFill" />
+        <view class="bread-info">
+          <view class="bread-name">{{item.name}}</view>
+          <view class="bread-desc">{{item.desc}}</view>
+        </view>
+        <button style="width: 80px;" class="tutorial-btn" hover-class="btn-hover" bindtap="gotoTutorial" data-id="{{item.id}}">
+          <view class="btn-inner">教程</view>
+        </button>
+      </view>
+    </block>
+  </view>
+
+  <!-- 提示信息 -->
+  <view class="mascot-section">
+    <view class="tip-bubble">
+      <text>{{selectedBreads.length === 1 ? '恭喜你抽到了这款美味面包！' : '三款推荐已到货，总有一款合你胃口！'}}</text>
+    </view>
+    <image src="/images/bread-character.png" class="bread-character"/>
+  </view>
+
+  <!-- 底部按钮 -->
+  <view class="footer-section">
+    <button class="draw-btn" hover-class="btn-hover" bindtap="drawAgain">再抽一次</button>
+  </view>
+</view> 

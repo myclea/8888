@@ -1,0 +1,110 @@
+<view class="tutorial-container">
+  <!-- 顶部固定：助手信息 -->
+  <view class="assistant-header">
+    <image src="/images/bread-assistant.png" class="assistant-avatar"/>
+    <view class="assistant-info">
+      <view class="assistant-desc">面包制作专家</view>
+    </view>
+    <view class="header-actions">
+      <view class="model-status">
+        <text class="model-name">面包助手AI</text>
+      </view>
+      <!-- 收藏按钮，仅当有选中的面包时显示 -->
+      <view class="favorite-btn {{isFavorite ? 'active' : ''}}" wx:if="{{currentBread}}" bindtap="toggleFavorite">
+        <text class="favorite-icon">{{isFavorite ? '❤' : '♡'}}</text>
+      </view>
+      <!-- 刷新按钮 -->
+      <view class="refresh-btn" bindtap="resetConversation">
+        <image src="/images/refresh.png" class="refresh-icon"/>
+      </view>
+    </view>
+  </view>
+
+  <!-- 当前面包提示 -->
+  <view class="current-bread-container" wx:if="{{currentBread}}">
+    <view class="current-bread-label">当前面包: {{currentBread}}</view>
+    <view class="favorite-status" bindtap="toggleFavorite">
+      <text class="favorite-text">{{isFavorite ? '已收藏' : '收藏'}}</text>
+      <text class="favorite-heart">{{isFavorite ? '❤' : '♡'}}</text>
+    </view>
+  </view>
+
+  <!-- 中间滚动：聊天记录 -->
+  <scroll-view class="chat-scroll-container" scroll-y="true" scroll-into-view="{{'scroll-to-bottom'}}" scroll-with-animation="true">    
+    <!-- 聊天消息 -->
+    <block wx:for="{{messages}}" wx:key="id">
+      <!-- 机器人消息 -->
+      <block wx:if="{{item.type==='bot'}}">
+        <view class="msg bot">
+          <image src="/images/bread-assistant.png" class="msg-avatar"/>
+          <view class="msg-content-wrapper">
+            <view class="msg-content bot-msg-content">{{item.content}}</view>
+          </view>
+        </view>
+      </block>
+      
+      <!-- 用户消息 -->
+      <block wx:if="{{item.type==='user'}}">
+        <view class="msg user">
+          <view class="msg-content-wrapper">
+            <view class="msg-content user-msg-content">{{item.content}}</view>
+          </view>
+        </view>
+        <view class="user-time">{{item.timeString}}</view>
+      </block>
+    </block>
+    
+    <!-- 加载中提示 -->
+    <view class="msg bot" wx:if="{{isLoading}}">
+      <image src="/images/bread-assistant.png" class="msg-avatar"/>
+      <view class="msg-content-wrapper">
+        <view class="msg-content bot-msg-content loading">
+          <view class="bread-loading">
+            <view class="bread-loading-icon"></view>
+            <text class="bread-loading-text">烘焙中...</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    
+    <!-- 空白视图，用于滚动到底部 -->
+    <view id="scroll-to-bottom"></view>
+  </scroll-view>
+
+  <!-- 底部固定：输入区域 -->
+  <view class="input-area">
+    <view class="input-wrapper">
+      <input class="msg-input" placeholder="输入你想问的问题..." placeholder-style="color: #A99D95;" value="{{inputMsg}}" bindinput="onInput" bindconfirm="sendMsg" confirm-type="send"/>
+      <button style="width: 80px;" class="send-btn" bindtap="sendMsg" disabled="{{!inputMsg || isLoading}}">
+        <text class="send-icon">发送</text>
+      </button>
+    </view>
+    
+    <!-- 快捷问题按钮 -->
+    <view class="quick-questions" wx:if="{{messages.length > 0}}">
+      <scroll-view scroll-x="true" class="quick-scroll" show-scrollbar="false">
+        <!-- 如果有当前面包，显示相关问题 -->
+        <block wx:if="{{currentBread}}">
+          <button class="quick-btn" bindtap="quickInput" data-text="{{currentBread}}需要哪些材料？">
+            <text class="quick-btn-icon">🧾</text> 所需材料
+          </button>
+          <button class="quick-btn" bindtap="quickInput" data-text="{{currentBread}}的烘焙温度和时间是多少？">
+            <text class="quick-btn-icon">🔥</text> 烘焙时间
+          </button>
+          <button class="quick-btn" bindtap="quickInput" data-text="{{currentBread}}有什么小技巧吗？">
+            <text class="quick-btn-icon">💡</text> 制作技巧
+          </button>
+        </block>
+        <!-- 默认问题 -->
+        <block wx:else>
+          <button class="quick-btn" bindtap="quickInput" data-text="面包发酵技巧">
+            <text class="quick-btn-icon">🍞</text> 面包发酵技巧
+          </button>
+          <button class="quick-btn" bindtap="quickInput" data-text="烘焙温度控制">
+            <text class="quick-btn-icon">🔥</text> 烘焙温度控制
+          </button>
+        </block>
+      </scroll-view>
+    </view>
+  </view>
+</view> 

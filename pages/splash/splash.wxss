@@ -1,0 +1,109 @@
+.splash-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 100vh;
+  width: 100%;
+  background-color: #fffbe6;
+  background-image: url('../../images/WechatIMG71.jpg');
+  background-size: cover;
+  background-position: center;
+  padding: 60rpx 40rpx;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.content-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  width: 100%;
+}
+
+/* 标题区域 */
+.title-section {
+  margin-top: 120rpx;
+  text-align: left;
+  width: 100%;
+}
+
+.main-title {
+  font-size: 70rpx;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 0;
+  line-height: 1.2;
+}
+
+.english-title {
+  font-size: 64rpx;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20rpx;
+  line-height: 1.2;
+}
+
+.slogan {
+  font-size: 32rpx;
+  color: #555;
+  margin-bottom: 5rpx;
+}
+
+.english-slogan {
+  font-size: 26rpx;
+  color: #666;
+}
+
+/* 图像区域 */
+.image-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 20rpx 0;
+}
+
+.bread-people {
+  width: 600rpx;
+  height: 600rpx;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 240, 0.8);
+}
+
+/* 底部标语 */
+.footer-slogan {
+  text-align: left;
+  width: 100%;
+  margin-bottom: 60rpx;
+}
+
+.cn-slogan {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 5rpx;
+}
+
+.en-slogan {
+  font-size: 26rpx;
+  color: #666;
+}
+
+/* 跳过按钮 */
+.skip-button {
+  position: absolute;
+  bottom: 60rpx;
+  right: 40rpx;
+  background-color: rgba(253, 192, 60, 0.8);
+  color: #fff;
+  font-size: 28rpx;
+  padding: 12rpx 30rpx;
+  border-radius: 30rpx;
+  box-shadow: 0 4rpx 8rpx rgba(0, 0, 0, 0.1);
+  z-index: 10;
+} 

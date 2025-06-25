@@ -1,0 +1,188 @@
+/* 合集页整体布局 */
+.collection-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: #fdfaf0;
+  overflow: hidden;
+}
+
+/* 顶部固定区域 */
+.fixed-header {
+  padding: 20rpx 30rpx 0;
+  background-color: #fdfaf0;
+  z-index: 10;
+}
+
+.collection-title {
+  font-size: 40rpx;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20rpx;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20rpx;
+}
+
+.search-input {
+  flex: 1;
+  border-radius: 30rpx;
+  padding: 12rpx 25rpx;
+  font-size: 26rpx;
+  background-color: #fff;
+  border: 1rpx solid #eee;
+}
+
+.search-btn {
+  background: #fdc03c;
+  color: #fff;
+  border-radius: 30rpx;
+  padding: 10rpx 25rpx;
+  font-size: 28rpx;
+  margin-left: 15rpx;
+  line-height: 1.2;
+}
+
+/* 水平滚动的分类导航 */
+.category-scroll {
+  white-space: nowrap;
+  padding: 10rpx 30rpx;
+  background-color: #fdfaf0;
+  border-bottom: 1rpx solid #f5f5f5;
+}
+
+.category-btn {
+  display: inline-block;
+  background: #fff;
+  color: #555;
+  border-radius: 30rpx;
+  margin-right: 20rpx;
+  padding: 12rpx 30rpx;
+  font-size: 26rpx;
+  border: 1rpx solid #eee;
+  transition: all 0.2s;
+}
+
+.category-btn.active {
+  background: #fdc03c;
+  color: #fff;
+  font-weight: bold;
+  border-color: #fdc03c;
+}
+
+/* 垂直滚动的面包列表 */
+.bread-list-container {
+  flex: 1; /* 占据剩余空间 */
+  padding: 20rpx 30rpx 0;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch; /* iOS滚动优化 */
+}
+
+.bread-card {
+  width: 100%;
+  margin: 0 auto 20rpx;
+  border-radius: 20rpx;
+  display: flex;
+  align-items: center;
+  padding: 20rpx;
+  background: #fff;
+  position: relative;
+  box-shadow: 0 4rpx 15rpx rgba(0,0,0,0.05);
+}
+
+.bread-img {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 16rpx;
+  margin-right: 20rpx;
+  flex-shrink: 0;
+}
+
+.bread-info {
+  flex: 1;
+  overflow: hidden;
+}
+
+.bread-name {
+  font-size: 30rpx;
+  font-weight: bold;
+  margin-bottom: 8rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.bread-desc {
+  font-size: 24rpx;
+  color: #666;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tutorial-btn {
+  position: absolute;
+  right: 80rpx;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #fdc03c;
+  color: #fff;
+  border-radius: 60rpx;
+  padding: 12rpx 36rpx;
+  font-size: 26rpx;
+  display: flex;
+  align-items: center;
+  border: none;
+  line-height: 1.4;
+}
+
+/* 心形图标样式 */
+.heart-icon {
+  margin-left: 8rpx;
+  color: #fff;
+  font-size: 22rpx;
+  font-weight: normal;
+}
+
+/* 按钮容器 */
+.btn-container {
+  position: absolute;
+  right: 10rpx;
+  top: 30%;
+  transform: translateY(-50%);
+}
+
+/* 收藏按钮 */
+.fav-btn {
+  position: absolute;
+  right: 30rpx;
+  top: 30%;
+  transform: translateY(-50%);
+  width: 48rpx;
+  height: 48rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: none;
+  z-index: 10;
+}
+
+.fav-btn .heart-icon {
+  font-size: 38rpx;
+  color: #999;
+  margin: 0;
+  transition: all 0.3s;
+}
+
+.fav-btn.active .heart-icon {
+  color: #FF6B6B;
+  transform: scale(1.1);
+}
+
+.list-bottom-padding {
+  height: 30rpx; /* 底部安全边距 */
+} 

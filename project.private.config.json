@@ -1,0 +1,61 @@
+{
+  "description": "项目私有配置文件。此文件中的内容将覆盖 project.config.json 中的相同字段。项目的改动优先同步到此文件中。详见文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/projectconfig.html",
+  "projectname": "bread%20head%20001",
+  "setting": {
+    "compileHotReLoad": true,
+    "urlCheck": false,
+    "coverView": true,
+    "lazyloadPlaceholderEnable": false,
+    "skylineRenderEnable": false,
+    "preloadBackgroundData": false,
+    "autoAudits": false,
+    "useApiHook": true,
+    "useApiHostProcess": true,
+    "showShadowRootInWxmlPanel": true,
+    "useStaticServer": false,
+    "useLanDebug": false,
+    "showES6CompileOption": false,
+    "bigPackageSizeSupport": true,
+    "checkInvalidKey": true,
+    "ignoreDevUnusedFiles": true
+  },
+  "libVersion": "3.8.9",
+  "srcMiniprogramRoot": "minprogram/",
+  "packOptions": {
+    "ignore": [],
+    "include": []
+  },
+  "condition": {},
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  },
+  "requiredPrivateInfos": [],
+  "editorSetting": {
+    "tabIndent": "auto",
+    "tabSize": 2
+  },
+  "miniProgramRoot": "./",
+  "compileType": "miniprogram",
+  "appid": "touristappid",
+  "simulatorType": "wechat",
+  "simulatorPluginLibVersion": {},
+  "cloudfunctionRoot": "cloudfunctions/",
+  "networkTimeout": {
+    "request": 15000,
+    "connectSocket": 15000,
+    "uploadFile": 15000,
+    "downloadFile": 15000
+  },
+  "wxAppid": "wx424f83ac90e334d4",
+  "projecttype": "miniProgram",
+  "miniprogramRoot": "",
+  "ignoreUploadUnusedFiles": true,
+  "jsserverRoot": "jsserver/",
+  "cloudfunctionTemplateRoot": "cloudfunctionTemplate/",
+  "cloudbaseRoot": "cloudbase/",
+  "preferences": {
+    "codeFormatLevel": "warn"
+  }
+}
