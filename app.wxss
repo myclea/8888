@@ -9,6 +9,7 @@ page {
   background: linear-gradient(to bottom, #fff8d4, #f5edc4);
 }
 
+
 /* 通用按钮样式 */
 .btn-primary {
   background: linear-gradient(to bottom, #fdc03c, #f4b942);
